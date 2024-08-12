@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_lot_id" model="report.paperformat">
+            <field name="name">Report Format Lot</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">20</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="True"/>
+            <field name="header_spacing">6</field>
+            <field name="dpi">90</field>
+    </record>
+
+    <template id="report_report_lots">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <!--<div class="row header" /> -->
+                <t t-call="prueba_next_pro.report_lots_document"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_lots_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc"/>
+            <div class="page">
+
+                <div class="oe_structure"/>
+                <center><h1>REPORTE PRODUCTO</h1></center>
+
+                <div class="row">
+                    <div class="col-6 p-2">
+                        <div class="row">
+                            <div class="col-4 bg-light p-2 border border-primary text-end">Nombre</div>
+                            <div class="col-8 p-2 border border-primary text-start">
+                                <t t-esc="doc.name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 bg-light p-2 border border-primary text-end">PRECIO</div>
+                            <div class="col-8 p-2 border border-primary text-start">
+                                <t t-esc="doc.list_price" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4 bg-light p-2 border border-primary text-end">REFERENCIA INTERNA</div>
+                            <div class="col-8 p-2 border border-primary text-start">
+                                <t t-esc="doc.default_code" />
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div class="col-6 p-2">
+
+                        <div class="row">
+                            <div class="col-4 bg-light p-2 border border-primary text-end">Etiqueta</div>
+                            <div class="col-8 p-2 border border-primary text-start">
+                                <t t-esc="doc.product_label_id.name" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4 bg-light p-2 border border-primary text-end">DESCRIPCION ETIQUETA</div>
+                            <div class="col-8 p-2 border border-primary text-end">
+                                <t t-esc="doc.product_label_id.description" />
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </t>
+    </template>
+
+
+    <record id="action_report_lot" model="ir.actions.report">
+        <field name="name">REPORTE PRODUCTO</field>
+        <field name="model">product.template</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">prueba_next_pro.report_report_lots</field>
+        <field name="report_file">prueba_next_pro.report_report_lots</field>
+        <field name="print_report_name">('Reporte_Producto').replace('/','_')</field>
+        <field name="binding_model_id" ref="model_product_template"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="prueba_next_pro.paperformat_lot_id" />
+    </record>
+
+</odoo>

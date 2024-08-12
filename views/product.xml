@@ -12,6 +12,12 @@
                    </button>
                 </div>
 
+               <field name="categ_id" position="after">
+                    <field name="product_label_id" />
+               </field>
+
+
+
            </field>
     </record>
 

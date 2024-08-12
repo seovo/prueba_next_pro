@@ -10,8 +10,9 @@
     "version": "17.0",
     "depends": ['sale_stock','sale_management'],
     "data": [
-        #'views/template_product.xml',
-        'views/product.xml'
+       "security/ir.model.access.csv",
+        'views/product.xml',
+        'views/report_product.xml'
 
     ],
     "application": False,
