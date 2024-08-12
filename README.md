@@ -1,5 +1,5 @@
 # ODOO VERSION 17
-#MENUS:
+#MENUS
 #Ventas/Aplicacion Masiva de Labels
 #Ventas/Etiquetas
 
