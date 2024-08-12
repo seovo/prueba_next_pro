@@ -10,4 +10,4 @@ class ProductLabelWizard(models.TransientModel):
     def set_labels(self):
         for record in self:
             for product in record.product_tmp_ids:
-                product.product_label_id = record.label_id.id
+                product.product_label_ids = [(4,record.label_id.id)]

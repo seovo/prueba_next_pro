@@ -61,25 +61,32 @@
 
 
                     </div>
+
                     <div class="col-6 p-2">
 
                         <div class="row">
-                            <div class="col-4 bg-light p-2 border border-primary text-end">Etiqueta</div>
+                            <div class="col-4 bg-light p-2 border border-primary text-end">DESCRIPCION</div>
                             <div class="col-8 p-2 border border-primary text-start">
-                                <t t-esc="doc.product_label_id.name" />
+                                <t t-raw="doc.description" />
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-4 bg-light p-2 border border-primary text-end">DESCRIPCION ETIQUETA</div>
+                            <div class="col-4 bg-light p-2 border border-primary text-end">CODIGO DE BARRAS</div>
                             <div class="col-8 p-2 border border-primary text-end">
-                                <t t-esc="doc.product_label_id.description" />
+                                <t t-esc="doc.barcode" />
                             </div>
                         </div>
 
 
                     </div>
 
+
+                </div>
+
+                <div>IMAGEN</div>
+                <div>
+                    <img t-if="doc.image_1920" t-att-src="image_data_uri(doc.image_1920)" alt="Logo" style="width: 200px" class="mt-0 pt-0"/>
                 </div>
 
 

@@ -34,7 +34,7 @@
     </record>
 
     <menuitem parent="sale.sale_order_menu"
-              name="Generar Planeacion Masiva"
+              name="Aplicacion Masiva de Labels"
               action="action_product_label_wizard" id="menu_product_label_wizard" />
 
 </odoo>

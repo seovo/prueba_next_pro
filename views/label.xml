@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_product_label" model="ir.actions.act_window">
+        <field name="name">Etiquetas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.label</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem parent="sale.sale_order_menu"
+          name="Etiquetas"
+          action="action_product_label" id="menu_product_label" />
+
+</odoo>
+

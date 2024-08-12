@@ -13,7 +13,8 @@
        "security/ir.model.access.csv",
         'views/product.xml',
         'views/report_product.xml',
-        'views/wizard.xml'
+        'views/wizard.xml',
+        'views/label.xml',
 
     ],
     "application": False,

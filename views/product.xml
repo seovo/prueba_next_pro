@@ -6,6 +6,14 @@
            <field name="inherit_id" ref="product.product_template_form_view" />
            <field name="arch" type="xml">
 
+               <xpath expr="//header" position="inside">
+                   <button class="oe_stat_button" string="Imprimir Reporte Detalle"
+                           name="print_report_label" type="object" />
+
+               </xpath>
+
+
+
                 <div name="button_box" position="inside">
                    <button class="oe_stat_button" name="action_open_sales_js" type="object" icon="fa-file-text-o">
                             <field string="Ventas" name="count_sale_ids" widget="statinfo"/>
@@ -13,7 +21,7 @@
                 </div>
 
                <field name="categ_id" position="after">
-                    <field name="product_label_id" />
+                    <field name="product_label_ids"  widget="many2many_tags"  />
                </field>
 
 
