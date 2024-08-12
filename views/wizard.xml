@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_label_wizard" model="ir.ui.view">
+        <field name="name">Aplicacion Masiva de Labels</field>
+        <field name="model">product.label.wizard</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <form string="Transfer Data To Server">
+                <group>
+                    <group>
+                         <field name="product_tmp_ids"  widget="many2many_tags"  />
+                         <field name="label_id" />
+                    </group>
+
+
+                </group>
+                <footer>
+                    <button name="set_labels" string="Aplicar Etiquetas"
+                            type="object" class="oe_highlight"/>
+
+
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_product_label_wizard" model="ir.actions.act_window">
+        <field name="name">Aplicacion Masiva de Labels</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.label.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem parent="sale.sale_order_menu"
+              name="Generar Planeacion Masiva"
+              action="action_product_label_wizard" id="menu_product_label_wizard" />
+
+</odoo>

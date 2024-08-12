@@ -12,7 +12,8 @@
     "data": [
        "security/ir.model.access.csv",
         'views/product.xml',
-        'views/report_product.xml'
+        'views/report_product.xml',
+        'views/wizard.xml'
 
     ],
     "application": False,
