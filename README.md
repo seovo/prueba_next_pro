@@ -1,5 +1,5 @@
 
-<h1 align="center"> PRUEBA NET PRO </h1>
+<h1 align="center"> PRUEBA NEXTPRO </h1>
 
 # ODOO VERSION 17
 # MENUS
